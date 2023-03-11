@@ -18,11 +18,6 @@
 
 can't believe that there's nothing here
 
-<svelte:head>
-	<title>flake Admin System</title>
-	<meta content="flake" property="og:title"/>
-</svelte:head>
-
 <style lang="scss">
 	.landing {
 		display: flex;

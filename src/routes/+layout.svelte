@@ -7,7 +7,7 @@
 	import { invalidate } from '$app/navigation';
 	import type { LayoutData } from './$types';
 
-	export let data: LayoutData;	
+	export let data: LayoutData;
 
 	$: ({ supabase } = data);
 	onMount(() => {
@@ -36,6 +36,11 @@
 		flake flake flake flake flake flake
 	</footer>
 </div>
+
+<svelte:head>
+	<title>flake Admin System</title>
+	<meta content="flake" property="og:title"/>
+</svelte:head>
 
 <style lang="scss">
 	.app {

@@ -4,6 +4,7 @@ import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/publi
 export const handle = (async ({ event, resolve }) => {
 	event.locals.supabase = createSupabaseServerClient({
 		event,
+		options: { db: { schema: 'flake' } },
 		supabaseUrl: PUBLIC_SUPABASE_URL,
 		supabaseKey: PUBLIC_SUPABASE_ANON_KEY
 	});
