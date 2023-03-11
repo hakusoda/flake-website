@@ -1,22 +1,25 @@
 <script lang="ts">
 	import { t } from '$lib/localization';
+	import { page } from '$app/stores';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 	const redirect = async () => {
 		await data.supabase.auth.signInWithOAuth({
-			options: { redirectTo: 'https://flake.voxelified.com/login' },
+			options: { redirectTo: data.redirectUrl },
 			provider: 'github'
 		});
 	};
 
-	$: if (data.session)
+	if ($page.data.session)
 		window.location.href = '/dashboard';
 </script>
 
-<div class="btn-container">
-	<button class="login-btn" on:click={redirect}>{$t('login.github')}</button>
-</div>
+{#if !$page.data.session}
+	<div class="btn-container">
+		<button class="login-btn" on:click={redirect}>{$t('login.github')}</button>
+	</div>
+{/if}
 
 <style lang="scss">
 	.btn-container {
