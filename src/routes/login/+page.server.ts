@@ -1,6 +1,7 @@
 import { redirect } from '@sveltejs/kit';
-import { VERCEL_URL } from '$env/static/public';
 import type { PageServerLoad } from './$types';
+
+const VERCEL_URL = process.env.VERCEL_URL;
 export const load = (async ({ locals: { getSession }}) => {
 	const session = await getSession();
 	if (session)
