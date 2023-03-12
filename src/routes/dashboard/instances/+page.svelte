@@ -1,7 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData, ActionData } from './$types';
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	let showKey = false;
 </script>
@@ -21,6 +22,9 @@
 		</div>
 	{/each}
 	<form class="create" method="POST">
+		{#if form}
+			<p class="error">{form.error}</p>
+		{/if}
 		<button>create new</button>
 	</form>
 </div>
@@ -31,6 +35,13 @@
 
 		form.create {
 			margin-top: 4rem;
+
+			.error {
+				border: 1px solid #ff8787;
+				padding: 12px 16px;
+				background: #ff4545;
+				border-radius: 8px;
+			}
 		}
 	}
 	.instance {
