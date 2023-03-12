@@ -34,6 +34,7 @@
 	</main>
 	<footer>
 		flake flake flake flake flake flake
+		<a href="https://www.voxelified.com">by Voxelified</a>
 	</footer>
 </div>
 
@@ -49,6 +50,8 @@
 		background: linear-gradient(-10deg, hsl(310 30% 40%) 15%, hsl(310 30% 60%) 75%);
 		--theme-hue: 310;
 		flex-direction: column;
+		--color-tertiary: hsl(var(--theme-hue) 35% 80%);
+		--background-secondary: hsl(var(--theme-hue) 25% 45%);
 	}
 	:global(body) {
 		overflow: hidden auto;
@@ -70,9 +73,17 @@
 	}
 
 	footer {
+		gap: 4px;
 		color: var(--color-secondary);
-		padding: 48px 24px;
+		display: flex;
+		padding: 40px 24px;
 		margin-top: auto;
 		background: var(--background-header);
+		flex-direction: column;
+		justify-content: center;
+		a {
+			color: var(--color-tertiary);
+			text-decoration: none;
+		}
 	}
 </style>

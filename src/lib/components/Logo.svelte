@@ -1,7 +1,10 @@
+<script lang="ts">
+	export let size: number = 48;
+</script>
 <svg
   class="text-logo"
-  width="10"
-  height="10"
+  width={size}
+  height={size}
   viewBox="0 0 10 10"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +94,6 @@
 </svg>
 <style>
 	.text-logo {
-		width: 48px;
-		height: 48px;
 		display: flex;
 	}
 </style>

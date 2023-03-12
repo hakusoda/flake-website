@@ -3,23 +3,14 @@
 
 	export let data: PageData;
 	export let form: ActionData;
-
-	let showKey = false;
 </script>
 
 <div class="instances">
-	<h2>Your Instances</h2>
+	<h2>Your Instances (click to view)</h2>
 	{#each data.instances as item}
-		<div class="instance">
+		<a class="instance" href={`/dashboard/instances/${item.id}`}>
 			<h3>Instance {item.id}</h3>
-			<p>access key</p>
-			<div class="key">
-				<input type="text" title="access key" value={showKey ? item.access_key : 'hidden'} readonly>
-				<button type="button" on:click={() =>
-					showKey ? navigator.clipboard.writeText(item.access_key) : showKey = true
-				}>{showKey ? 'copy' : 'reveal'}</button>
-			</div>
-		</div>
+		</a>
 	{/each}
 	<form class="create" method="POST">
 		{#if form}
@@ -45,10 +36,13 @@
 		}
 	}
 	.instance {
+		color: var(--color-primary);
+		display: block;
 		padding: 16px 20px;
 		background: var(--background-primary);
 		border-radius: 8px;
 		margin-bottom: 16px;
+		text-decoration: none;
 
 		h3 {
 			margin: 0;

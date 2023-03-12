@@ -8,6 +8,6 @@ export const load = (async ({ locals: { getSession }}) => {
 		throw redirect(303, '/dashboard');
 
 	return {
-		redirectUrl: `http${VERCEL_URL ? `s://${VERCEL_URL}` : '://localhost:5173'}/login`
+		redirectUrl: `http${VERCEL_URL ? `s://${VERCEL_URL}` : '://localhost:3000'}/login`
 	};
 }) satisfies PageServerLoad;

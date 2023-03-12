@@ -13,10 +13,8 @@
 
 <div class="features">
 	<h1>{$t('home.features')}</h1>
-	featureless
+	to be written
 </div>
-
-can't believe that there's nothing here
 
 <style lang="scss">
 	.landing {
