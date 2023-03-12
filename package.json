@@ -4,10 +4,9 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"scripts": {
-		"dev": "vite dev",
+		"start": "vercel dev",
 		"build": "vite build",
 		"deploy": "vercel deploy --prod",
-		"preview": "vite preview",
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
