@@ -5,8 +5,10 @@ export const load = (async ({ params, locals: { supabase } }) => {
 	const instances = await supabase.from('cloud_instances').select('id, access_key').eq('id', params.id);
 	if (instances.error)
 		throw error(500, instances.error.message);
+	if (!instances.data.length)
+		throw error(404, 'Instance does not exist.');
 
-	const { data: servers } = await supabase.from('active_servers').select() as { data: Server[] };
+	const { data: servers } = await supabase.from('active_servers').select().eq('instance_id', params.id) as { data: Server[] };
 	if (!servers)
 		throw error(500);
 

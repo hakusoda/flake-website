@@ -48,12 +48,5 @@
 			margin: 0;
 			font-weight: 600;
 		}
-		p {
-			margin: 8px 0 0 0;
-			font-size: 14px;
-		}
-		.key {
-			margin-top: 4px;
-		}
 	}
 </style>

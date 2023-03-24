@@ -34,11 +34,18 @@
 <div class="instance">
 	<h1>Instance {data.item.id}</h1>
 	<p>access key</p>
-	<div class="key">
+	<div class="field">
 		<input type="text" title="access key" value={showKey ? data.item.access_key : 'hidden'} readonly>
 		<button type="button" on:click={() =>
 			showKey ? navigator.clipboard.writeText(data.item.access_key) : showKey = true
 		}>{showKey ? 'copy' : 'reveal'}</button>
+	</div>
+
+	<p>delete instance</p>
+	<div class="field">
+		<form class="logout" action="delete" method="POST">
+			<button>delete</button>
+		</form>
 	</div>
 
 	<div class="servers">
@@ -89,7 +96,7 @@
 			margin: 8px 0 0 0;
 			font-size: 14px;
 		}
-		.key {
+		.field {
 			margin-top: 4px;
 		}
 		.servers {
