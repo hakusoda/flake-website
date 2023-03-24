@@ -43,7 +43,7 @@
 
 	<p>delete instance</p>
 	<div class="field">
-		<form class="logout" action="delete" method="POST">
+		<form class="logout" action="?/delete" method="POST">
 			<button>delete</button>
 		</form>
 	</div>
